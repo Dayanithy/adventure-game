@@ -49,25 +49,36 @@ export default function HomePage() {
   return (
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4">Choose Your Adventure! 🌟</h2>
-          <p className="text-xl text-muted-foreground">
+        <div className="text-center mb-12 animate-fadeIn">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary animate-slideUp">
+            Choose Your Adventure! 🌟
+          </h2>
+          <p className="text-xl md:text-2xl text-muted-foreground font-medium animate-slideUp" style={{animationDelay: '0.2s'}}>
             Pick a story and start your exciting journey!
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {themes.map((theme) => (
-            <ThemeCard
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {themes.map((theme, index) => (
+            <div
               key={theme.id}
-              theme={theme}
-              onClick={handleThemeSelect}
-            />
+              className="animate-fadeIn"
+              style={{animationDelay: `${0.1 * (index + 1)}s`}}
+            >
+              <ThemeCard
+                theme={theme}
+                onClick={handleThemeSelect}
+              />
+            </div>
           ))}
         </div>
 
-        <div className="text-center text-sm text-muted-foreground">
-          <p>🔒 More adventures coming soon!</p>
+        <div className="text-center animate-fadeIn" style={{animationDelay: '0.8s'}}>
+          <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground font-medium">
+            <span className="text-2xl">🔒</span>
+            <p>More magical adventures coming soon!</p>
+            <span className="text-2xl animate-pulse-slow">✨</span>
+          </div>
         </div>
       </div>
     </main>

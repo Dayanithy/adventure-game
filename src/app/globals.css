@@ -1,26 +1,10 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
+  --font-sans: var(--font-kids-primary);
+  --font-mono: var(--font-kids-secondary);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -40,95 +24,390 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
 }
 
+/* ========== HOME THEME - Bright & Playful ========== */
 :root {
-  --radius: 0.625rem;
-  --background: #f7f3e8; /* parchment */
-  --foreground: #2d3a1a; /* deep forest green */
-  --card: #fffbe6; /* light parchment */
-  --card-foreground: #2d3a1a;
-  --popover: #fffbe6;
-  --popover-foreground: #2d3a1a;
-  --primary: #3e5c2c; /* forest green */
-  --primary-foreground: #fffbe6;
-  --secondary: #e6d9b6; /* sand */
-  --secondary-foreground: #3e5c2c;
-  --muted: #e6d9b6;
-  --muted-foreground: #7c6f57;
-  --accent: #d4af37; /* gold */
-  --accent-foreground: #3e5c2c;
-  --destructive: #a94442;
-  --border: #c2b280;
-  --input: #c2b280;
-  --ring: #d4af37;
-  --chart-1: #8fbc8f;
-  --chart-2: #bdb76b;
-  --chart-3: #deb887;
-  --chart-4: #a0522d;
-  --chart-5: #228b22;
-  --sidebar: #fffbe6;
-  --sidebar-foreground: #2d3a1a;
-  --sidebar-primary: #3e5c2c;
-  --sidebar-primary-foreground: #fffbe6;
-  --sidebar-accent: #d4af37;
-  --sidebar-accent-foreground: #3e5c2c;
-  --sidebar-border: #c2b280;
-  --sidebar-ring: #d4af37;
+  /* Fonts for kids - using system fonts for now */
+  --font-kids-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  --font-kids-secondary: "Comic Sans MS", cursive, fantasy;
+  
+  /* Radius - more rounded for kids */
+  --radius: 1rem;
+  
+  /* Home Theme - Rainbow & Bright */
+  --background: linear-gradient(135deg, #E8F5E8 0%, #F0F8FF 50%, #FFF8DC 100%);
+  --foreground: #2D3748;
+  
+  /* Vibrant Primary Colors */
+  --primary: #FF6B6B; /* Coral Pink */
+  --primary-foreground: #FFFFFF;
+  
+  /* Playful Secondary */
+  --secondary: #4ECDC4; /* Turquoise */
+  --secondary-foreground: #FFFFFF;
+  
+  /* Fun Accent */
+  --accent: #FFE066; /* Sunny Yellow */
+  --accent-foreground: #2D3748;
+  
+  /* Cards - Light and airy */
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #2D3748;
+  
+  /* Muted colors */
+  --muted: #F7FAFC;
+  --muted-foreground: #718096;
+  
+  /* Borders */
+  --border: rgba(226, 232, 240, 0.8);
+  --input: rgba(226, 232, 240, 0.8);
+  --ring: #FF6B6B;
+  
+  /* Popover */
+  --popover: rgba(255, 255, 255, 0.95);
+  --popover-foreground: #2D3748;
+  
+  /* Destructive */
+  --destructive: #F56565;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+/* ========== SPACE THEME - Cosmic & Dark ========== */
+.theme-space {
+  /* Space Theme - Dark with stars */
+  --background: linear-gradient(135deg, #0F0F23 0%, #1A1A2E 50%, #16213E 100%);
+  --foreground: #E2E8F0;
+  
+  /* Cosmic Primary */
+  --primary: #9F7AEA; /* Purple */
+  --primary-foreground: #FFFFFF;
+  
+  /* Nebula Secondary */
+  --secondary: #4299E1; /* Blue */
+  --secondary-foreground: #FFFFFF;
+  
+  /* Star Accent */
+  --accent: #F6E05E; /* Golden */
+  --accent-foreground: #1A202C;
+  
+  /* Space Cards */
+  --card: rgba(45, 55, 72, 0.8);
+  --card-foreground: #E2E8F0;
+  
+  /* Muted space colors */
+  --muted: rgba(45, 55, 72, 0.6);
+  --muted-foreground: #A0AEC0;
+  
+  /* Space borders */
+  --border: rgba(113, 128, 150, 0.5);
+  --input: rgba(113, 128, 150, 0.4);
+  --ring: #9F7AEA;
+  
+  /* Space popover */
+  --popover: rgba(45, 55, 72, 0.95);
+  --popover-foreground: #E2E8F0;
+}
+
+/* Space theme specific improvements */
+.theme-space .text-card-foreground {
+  color: #E2E8F0 !important;
+}
+
+.theme-space button {
+  background: rgba(45, 55, 72, 0.9) !important;
+  border-color: rgba(113, 128, 150, 0.6) !important;
+  color: #E2E8F0 !important;
+}
+
+.theme-space button:hover {
+  background: rgba(45, 55, 72, 0.95) !important;
+  border-color: #9F7AEA !important;
+  color: #FFFFFF !important;
+}
+
+/* ========== OCEAN THEME - Blue & Aqua ========== */
+.theme-ocean {
+  --background: linear-gradient(135deg, #E6FFFA 0%, #B2F5EA 50%, #81E6D9 100%);
+  --foreground: #1A365D;
+  
+  --primary: #0987A0; /* Ocean Blue */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #38B2AC; /* Teal */
+  --secondary-foreground: #FFFFFF;
+  
+  --accent: #F0F8FF; /* Alice Blue */
+  --accent-foreground: #1A365D;
+  
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #1A365D;
+}
+
+/* ========== FOREST THEME - Green & Earthy ========== */
+.theme-forest {
+  --background: linear-gradient(135deg, #F0FFF4 0%, #E6FFFA 50%, #D6F5D6 100%);
+  --foreground: #22543D;
+  
+  --primary: #38A169; /* Forest Green */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #68D391; /* Light Green */
+  --secondary-foreground: #FFFFFF;
+  
+  --accent: #F7FAFC; /* Light */
+  --accent-foreground: #22543D;
+  
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #22543D;
+}
+
+/* ========== DINO THEME - Prehistoric & Earthy ========== */
+.theme-dino {
+  --background: linear-gradient(135deg, #FFF8E1 0%, #F1E9D2 50%, #E8D5B7 100%);
+  --foreground: #3E2723;
+  
+  --primary: #8D6E63; /* Brown */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #A1887F; /* Light Brown */
+  --secondary-foreground: #FFFFFF;
+  
+  --accent: #FFF3E0; /* Light Orange */
+  --accent-foreground: #3E2723;
+  
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #3E2723;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-kids-primary);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  /* Children-friendly typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-kids-primary);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  /* Large, readable text for kids */
+  body {
+    font-size: 18px;
+  }
+  
+  /* Bigger buttons for touch */
+  button {
+    min-height: 48px;
+    border-radius: var(--radius);
+    font-family: var(--font-kids-primary);
+    font-weight: 600;
   }
 }
 
 @layer utilities {
+  /* ========== ANIMATIONS ========== */
   .animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out forwards;
+    animation: fadeIn 0.6s ease-out forwards;
     opacity: 0;
   }
   
+  .animate-bounceIn {
+    animation: bounceIn 0.8s ease-out forwards;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.5s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+  
+  /* ========== BACKGROUND PATTERNS ========== */
+  .bg-home-pattern {
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(255, 224, 102, 0.1) 0%, transparent 50%),
+      var(--background);
+  }
+  
+  .bg-space-pattern {
+    background: 
+      radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(2px 2px at 160px 30px, rgba(255, 255, 255, 0.8), transparent),
+      var(--background);
+    background-size: 200px 100px;
+  }
+  
+  .bg-ocean-pattern {
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(56, 178, 172, 0.1) 2px,
+        rgba(56, 178, 172, 0.1) 4px
+      ),
+      var(--background);
+  }
+  
+  /* ========== KEYFRAMES ========== */
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+  }
+  
+  /* ========== INTERACTIVE ELEMENTS ========== */
+  .btn-fun {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+  }
+  
+  .btn-fun:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-fun:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ripple effect */
+  .btn-fun::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width 0.3s, height 0.3s;
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn-fun:active::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* ========== THEME CARDS ========== */
+  .theme-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    border-radius: 1.5rem;
+  }
+  
+  .theme-card:hover:not(.cursor-not-allowed) {
+    transform: scale(1.03) translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+  
+  .theme-card:active:not(.cursor-not-allowed) {
+    transform: scale(0.98) translateY(-2px);
+    transition: all 0.1s ease-out;
+  }
+  
+  .theme-card .cursor-not-allowed:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* ========== PROGRESS BARS ========== */
+  .progress-fill {
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    border-radius: inherit;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* ========== RESPONSIVE HELPERS ========== */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* ========== ACCESSIBILITY ========== */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fadeIn,
+    .animate-bounceIn,
+    .animate-slideUp,
+    .animate-pulse-slow,
+    .animate-wiggle {
+      animation: none;
+    }
+    
+    .btn-fun,
+    .theme-card {
+      transition: none;
+    }
   }
 }
