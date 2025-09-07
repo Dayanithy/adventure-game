@@ -1,0 +1,416 @@
+{
+  "id": "space",
+  "theme": "space",
+  "title": "Space Explorer Adventure",
+  "description": "Blast off into space and meet friendly aliens!",
+  "startNodeId": "start",
+  "nodes": {
+    "start": {
+      "id": "start",
+      "text": "You are an astronaut in your very own spaceship! The stars are twinkling and you see planets in the distance. Where would you like to go first?",
+      "emoji": "🚀",
+      "choices": [
+        {
+          "id": "moon",
+          "text": "Fly to the Moon",
+          "emoji": "🌙",
+          "nextNodeId": "moon_landing"
+        },
+        {
+          "id": "mars",
+          "text": "Zoom to Mars",
+          "emoji": "🔴",
+          "nextNodeId": "mars_landing"
+        },
+        {
+          "id": "asteroid",
+          "text": "Visit the Asteroid Belt",
+          "emoji": "☄️",
+          "nextNodeId": "asteroid_field"
+        }
+      ]
+    },
+    "moon_landing": {
+      "id": "moon_landing",
+      "text": "Wow! You landed on the Moon! It's covered in gray dust and you can see Earth in the sky. Suddenly, you spot a friendly alien with big eyes waving at you!",
+      "emoji": "👽",
+      "choices": [
+        {
+          "id": "wave_back",
+          "text": "Wave back and say hello",
+          "emoji": "👋",
+          "nextNodeId": "alien_friend"
+        },
+        {
+          "id": "take_photo",
+          "text": "Take a photo first",
+          "emoji": "📷",
+          "nextNodeId": "moon_photo"
+        }
+      ]
+    },
+    "mars_landing": {
+      "id": "mars_landing",
+      "text": "Amazing! You're on Mars, the red planet! The ground is rusty red and you see strange rock formations. You discover a small rover robot that looks stuck!",
+      "emoji": "🤖",
+      "choices": [
+        {
+          "id": "help_rover",
+          "text": "Help the robot rover",
+          "emoji": "🔧",
+          "nextNodeId": "robot_friend"
+        },
+        {
+          "id": "explore_rocks",
+          "text": "Explore the red rocks",
+          "emoji": "🪨",
+          "nextNodeId": "mars_discovery"
+        }
+      ]
+    },
+    "asteroid_field": {
+      "id": "asteroid_field",
+      "text": "You're flying through the asteroid belt! Floating rocks sparkle like diamonds all around you. You see a space station built on a big asteroid!",
+      "emoji": "🛰️",
+      "choices": [
+        {
+          "id": "visit_station",
+          "text": "Visit the space station",
+          "emoji": "🏢",
+          "nextNodeId": "space_station"
+        },
+        {
+          "id": "collect_crystals",
+          "text": "Collect pretty space crystals",
+          "emoji": "💎",
+          "nextNodeId": "crystal_collection"
+        }
+      ]
+    },
+    "alien_friend": {
+      "id": "alien_friend",
+      "text": "The alien is so happy you said hello! Its name is Zorp and it shows you a beautiful garden of glowing moon flowers. Zorp gives you a special moon rock as a friendship gift!",
+      "emoji": "🌸",
+      "choices": [
+        {
+          "id": "thank_zorp",
+          "text": "Thank Zorp and explore together",
+          "emoji": "🤝",
+          "nextNodeId": "moon_adventure"
+        },
+        {
+          "id": "count_flowers",
+          "text": "Count the colorful flowers",
+          "emoji": "🌺",
+          "nextNodeId": "flower_counting"
+        },
+        {
+          "id": "learn_alien_language",
+          "text": "Learn Zorp's language",
+          "emoji": "🗣️",
+          "nextNodeId": "alien_language"
+        }
+      ]
+    },
+    "moon_photo": {
+      "id": "moon_photo",
+      "text": "Click! You take an amazing photo of Earth from the Moon. The alien sees your camera and gets excited! It wants to take a photo with you!",
+      "emoji": "📸",
+      "choices": [
+        {
+          "id": "selfie_time",
+          "text": "Take a selfie together",
+          "emoji": "🤳",
+          "nextNodeId": "alien_friend"
+        }
+      ]
+    },
+    "moon_adventure": {
+      "id": "moon_adventure",
+      "text": "You and Zorp have the best time exploring the Moon together! You see the most beautiful Earth-rise and collect moon dust souvenirs. What an amazing friendship!",
+      "emoji": "🌍",
+      "isEnding": true,
+      "moral": "Being friendly and kind helps us make wonderful friends, even in space!",
+      "choices": []
+    },
+    "robot_friend": {
+      "id": "robot_friend",
+      "text": "You help fix the rover robot! Beep beep! It's so grateful and shows you a secret cave full of Martian crystals that glow in beautiful colors!",
+      "emoji": "✨",
+      "choices": [
+        {
+          "id": "explore_cave",
+          "text": "Explore the crystal cave",
+          "emoji": "🕳️",
+          "nextNodeId": "mars_crystals"
+        },
+        {
+          "id": "solve_robot_puzzle",
+          "text": "Help robot solve a Mars puzzle",
+          "emoji": "🧩",
+          "nextNodeId": "mars_puzzle"
+        }
+      ]
+    },
+    "mars_discovery": {
+      "id": "mars_discovery",
+      "text": "While exploring the rocks, you find ancient drawings made by friendly Martians long ago! The drawings show that Mars was once full of rivers and forests!",
+      "emoji": "🎨",
+      "choices": [
+        {
+          "id": "document_discovery",
+          "text": "Document your amazing discovery",
+          "emoji": "📝",
+          "nextNodeId": "mars_scientist"
+        }
+      ]
+    },
+    "mars_crystals": {
+      "id": "mars_crystals",
+      "text": "The crystal cave is magical! The robot becomes your guide and you discover that these crystals can grow plants, even on Mars! You help start the first Martian garden!",
+      "emoji": "🌱",
+      "isEnding": true,
+      "moral": "Helping others and working together can create wonderful things!",
+      "choices": []
+    },
+    "mars_scientist": {
+      "id": "mars_scientist",
+      "text": "You become a famous space scientist! Your discovery helps everyone understand that Mars was once a beautiful planet with life. You inspire kids everywhere to explore space!",
+      "emoji": "🔬",
+      "isEnding": true,
+      "moral": "Curiosity and discovery help us learn amazing things about our universe!",
+      "choices": []
+    },
+    "space_station": {
+      "id": "space_station",
+      "text": "The space station is run by a team of friendly alien scientists! They're studying the asteroids to learn about how planets are made. They invite you to help with their research!",
+      "emoji": "👨‍🔬",
+      "choices": [
+        {
+          "id": "join_research",
+          "text": "Join their research team",
+          "emoji": "🔬",
+          "nextNodeId": "space_scientist"
+        }
+      ]
+    },
+    "crystal_collection": {
+      "id": "crystal_collection",
+      "text": "You collect the most beautiful space crystals! Each one is a different color and they make musical sounds when they touch each other. You create a space symphony!",
+      "emoji": "🎵",
+      "choices": [
+        {
+          "id": "play_music",
+          "text": "Play a crystal concert",
+          "emoji": "🎼",
+          "nextNodeId": "space_musician"
+        }
+      ]
+    },
+    "space_scientist": {
+      "id": "space_scientist",
+      "text": "Working with the alien scientists, you make an incredible discovery! You find that asteroids contain the ingredients needed to grow food in space. This will help future space explorers!",
+      "emoji": "🥕",
+      "isEnding": true,
+      "moral": "Working together with others helps us make important discoveries!",
+      "choices": []
+    },
+    "space_musician": {
+      "id": "space_musician",
+      "text": "Your crystal music is so beautiful that it reaches Earth! People all over the world hear your space symphony and feel peaceful and happy. Music really does bring everyone together!",
+      "emoji": "🌍",
+      "isEnding": true,
+      "moral": "Art and creativity can bring joy to people everywhere in the universe!",
+      "choices": []
+    },
+    "flower_counting": {
+      "id": "flower_counting",
+      "text": "Zorp's garden has amazing flowers! You see 3 red flowers, 5 blue flowers, and 2 yellow flowers. Zorp asks you to help count all the flowers together!",
+      "emoji": "🔢",
+      "choices": [
+        {
+          "id": "count_total",
+          "text": "Count all flowers (3+5+2=10)",
+          "emoji": "➕",
+          "nextNodeId": "counting_success"
+        },
+        {
+          "id": "count_by_color",
+          "text": "Group them by color first",
+          "emoji": "🎨",
+          "nextNodeId": "color_learning"
+        }
+      ]
+    },
+    "alien_language": {
+      "id": "alien_language",
+      "text": "Zorp teaches you that 'Zibble' means hello and 'Woosh' means friend! Zorp wants to teach you more words. What should you learn next?",
+      "emoji": "🎓",
+      "choices": [
+        {
+          "id": "learn_colors",
+          "text": "Learn color words",
+          "emoji": "🌈",
+          "nextNodeId": "alien_colors"
+        },
+        {
+          "id": "learn_numbers",
+          "text": "Learn number words",
+          "emoji": "🔢",
+          "nextNodeId": "alien_numbers"
+        },
+        {
+          "id": "practice_greeting",
+          "text": "Practice greeting other aliens",
+          "emoji": "👋",
+          "nextNodeId": "alien_communication"
+        }
+      ]
+    },
+    "counting_success": {
+      "id": "counting_success",
+      "text": "Great job! You counted 10 flowers total! Zorp is so impressed with your math skills. Together you plant the flowers in patterns: red-blue-yellow, red-blue-yellow!",
+      "emoji": "🌟",
+      "choices": [
+        {
+          "id": "make_pattern",
+          "text": "Continue the flower pattern",
+          "emoji": "🔄",
+          "nextNodeId": "pattern_master"
+        }
+      ]
+    },
+    "color_learning": {
+      "id": "color_learning",
+      "text": "You and Zorp organize the flowers by color! The red flowers glow like fire, the blue ones sparkle like stars, and the yellow ones shine like the sun! Colors are everywhere in space!",
+      "emoji": "🎨",
+      "choices": [
+        {
+          "id": "paint_spaceship",
+          "text": "Paint your spaceship with these colors",
+          "emoji": "🎭",
+          "nextNodeId": "colorful_spaceship"
+        }
+      ]
+    },
+    "alien_colors": {
+      "id": "alien_colors",
+      "text": "Zorp teaches you alien color words! 'Flibber' means red like Mars, 'Bloop' means blue like Earth's oceans, and 'Zingy' means yellow like the sun!",
+      "emoji": "🌈",
+      "choices": [
+        {
+          "id": "use_color_words",
+          "text": "Use the new words to describe space",
+          "emoji": "🗨️",
+          "nextNodeId": "language_master"
+        }
+      ]
+    },
+    "alien_numbers": {
+      "id": "alien_numbers",
+      "text": "Zorp shows you alien numbers! One is 'Zip', two is 'Zap', three is 'Zoom'! You practice counting Moon craters: Zip crater, Zap craters, Zoom craters!",
+      "emoji": "🌙",
+      "choices": [
+        {
+          "id": "count_stars",
+          "text": "Count stars with alien numbers",
+          "emoji": "⭐",
+          "nextNodeId": "star_counter"
+        }
+      ]
+    },
+    "alien_communication": {
+      "id": "alien_communication",
+      "text": "You meet three more aliens: Bip, Bop, and Beep! You greet each one by saying 'Zibble!' They are so happy and invite you to their space party!",
+      "emoji": "🎉",
+      "choices": [
+        {
+          "id": "join_party",
+          "text": "Join the space party",
+          "emoji": "🥳",
+          "nextNodeId": "space_party"
+        }
+      ]
+    },
+    "pattern_master": {
+      "id": "pattern_master",
+      "text": "You're amazing at patterns! You and Zorp create beautiful flower patterns that help other space travelers find their way home. You've become the Moon's first pattern artist!",
+      "emoji": "🎨",
+      "isEnding": true,
+      "moral": "Learning math and patterns helps us create beautiful and useful things!",
+      "choices": []
+    },
+    "colorful_spaceship": {
+      "id": "colorful_spaceship",
+      "text": "Your spaceship is now the most beautiful one in space! The colors make it easy for other astronauts to find you, and everyone wants to be your friend. Art makes everything better!",
+      "emoji": "🚀",
+      "isEnding": true,
+      "moral": "Creativity and art help us express ourselves and connect with others!",
+      "choices": []
+    },
+    "language_master": {
+      "id": "language_master",
+      "text": "You become the first human to speak fluent alien language! You help Earth and alien planets become friends by translating between them. Communication brings everyone together!",
+      "emoji": "🌍",
+      "isEnding": true,
+      "moral": "Learning new languages helps us understand and befriend people who are different from us!",
+      "choices": []
+    },
+    "star_counter": {
+      "id": "star_counter",
+      "text": "You become the best star counter in the galaxy! You help space scientists discover new constellations using your alien number skills. Math really is universal!",
+      "emoji": "⭐",
+      "isEnding": true,
+      "moral": "Math is the same everywhere in the universe and helps us make amazing discoveries!",
+      "choices": []
+    },
+    "space_party": {
+      "id": "space_party",
+      "text": "The space party is incredible! Aliens from different planets share their food, music, and games. You learn that friendship is the same in every language across the universe!",
+      "emoji": "🎊",
+      "isEnding": true,
+      "moral": "Friendship and kindness are understood by everyone, no matter where they come from!",
+      "choices": []
+    },
+    "mars_puzzle": {
+      "id": "mars_puzzle",
+      "text": "The robot shows you an ancient Martian puzzle! There are 4 red rocks, 3 blue rocks, and 2 green rocks. The puzzle says: 'Arrange rocks from most to least to unlock the Mars treasure!'",
+      "emoji": "🧩",
+      "choices": [
+        {
+          "id": "arrange_by_number",
+          "text": "Arrange: 4 red, 3 blue, 2 green",
+          "emoji": "🔢",
+          "nextNodeId": "puzzle_solved"
+        },
+        {
+          "id": "arrange_by_color",
+          "text": "Arrange by rainbow order",
+          "emoji": "🌈",
+          "nextNodeId": "puzzle_hint"
+        }
+      ]
+    },
+    "puzzle_solved": {
+      "id": "puzzle_solved",
+      "text": "Amazing! You solved the puzzle! The ground opens up to reveal a treasure chest full of Mars gems that can power spaceships! You and the robot become the best Mars exploration team!",
+      "emoji": "💎",
+      "isEnding": true,
+      "moral": "Using math and problem-solving skills helps us discover incredible treasures!",
+      "choices": []
+    },
+    "puzzle_hint": {
+      "id": "puzzle_hint",
+      "text": "The robot beeps helpfully! It points to the numbers on each pile of rocks. You realize you need to count and arrange them by how many there are!",
+      "emoji": "💡",
+      "choices": [
+        {
+          "id": "try_counting_again",
+          "text": "Count and arrange by number",
+          "emoji": "🔢",
+          "nextNodeId": "puzzle_solved"
+        }
+      ]
+    }
+  }
+}

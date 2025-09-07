@@ -9,7 +9,6 @@ import {
   NavigationMenuContent,
   NavigationMenuLink
 } from "@/components/ui/navigation-menu";
-import Image from "next/image";
 import Footer from "./footer";
 
 const geistSans = Geist({
@@ -23,8 +22,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Adventure game",
-  description: "An exciting adventure game built for kids",
+  title: "Kids Adventure Game",
+  description: "Interactive choice-based adventure stories for kindergarteners",
 };
 
 export default function RootLayout({
@@ -37,35 +36,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <nav className="flex items-center gap-8 py-6 px-4">
-          <div className="flex-shrink-0">
-            <Image src="/globe.svg" alt="Logo" width={40} height={40} />
-          </div>
-          <div className="flex-1 flex justify-center">
+        <header className="bg-primary text-primary-foreground py-4 px-4 shadow-sm">
+          <div className="max-w-4xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">🌟</span>
+              <div>
+                <h1 className="text-xl font-bold leading-tight">Kids Adventure Game</h1>
+                <p className="text-sm opacity-90">Choose your own story!</p>
+              </div>
+            </div>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuLink href="#">Home</NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#">About</NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#">Contact</NavigationMenuLink>
+                  <NavigationMenuLink 
+                    href="/"
+                    className="text-primary-foreground hover:text-primary-foreground/80 font-medium px-3 py-2 rounded-md hover:bg-primary-foreground/10 transition-colors"
+                  >
+                    🏠 Home
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-          <div className="flex-shrink-0">
-            {/* Dummy user icon SVG */}
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted">
-              <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-muted-foreground">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
-              </svg>
-            </span>
-          </div>
-        </nav>
+        </header>
   <main className="flex-1 flex flex-col">
           {children}
         </main>

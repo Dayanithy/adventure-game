@@ -1,46 +1,74 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+'use client';
 
-export default function Page() {
+import { useRouter } from 'next/navigation';
+import ThemeCard from '@/components/common/ThemeCard';
+import { ThemeCard as ThemeCardType } from '@/lib/types/game.types';
+
+const themes: ThemeCardType[] = [
+  {
+    id: 'space',
+    title: 'Space Explorer',
+    emoji: '🚀',
+    color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    description: 'Blast off to planets and meet friendly aliens!'
+  },
+  {
+    id: 'ocean',
+    title: 'Ocean Adventure',
+    emoji: '🌊',
+    color: 'linear-gradient(135deg, #667eea 0%, #1e3c72 100%)',
+    description: 'Dive deep and discover underwater treasures!',
+    isLocked: true
+  },
+  {
+    id: 'forest',
+    title: 'Forest Quest',
+    emoji: '🌲',
+    color: 'linear-gradient(135deg, #2eb398 0%, #0b6623 100%)',
+    description: 'Explore magical forests and help forest friends!',
+    isLocked: true
+  },
+  {
+    id: 'dino',
+    title: 'Dino Detective',
+    emoji: '🦕',
+    color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    description: 'Solve mysteries with friendly dinosaurs!',
+    isLocked: true
+  }
+];
+
+export default function HomePage() {
+  const router = useRouter();
+
+  const handleThemeSelect = (themeId: string) => {
+    router.push(`/game/${themeId}`);
+  };
+
   return (
-    <main className="flex items-center justify-center bg-gray-100">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-        <Card className="w-80">
-          <CardHeader>
-            <CardTitle>Welcome, Adventurer!</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-2">Prepare for an epic journey through mysterious lands, hidden treasures, and daring quests.</p>
-            <p className="text-muted-foreground">Are you ready to begin your adventure? Click a menu link above to start exploring!</p>
-          </CardContent>
-        </Card>
-        <Card className="w-80">
-          <CardHeader>
-            <CardTitle>Choose Your Path</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-2">Will you explore the enchanted forest, scale the icy mountains, or dive into the sunken caves?</p>
-            <p className="text-muted-foreground">Each path holds secrets and surprises. The choice is yours!</p>
-          </CardContent>
-        </Card>
-        <Card className="w-80">
-          <CardHeader>
-            <CardTitle>Collect Treasures</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-2">Find magical items, rare gems, and powerful artifacts as you progress through your quest.</p>
-            <p className="text-muted-foreground">Keep your eyes open—treasure can be hidden anywhere!</p>
-          </CardContent>
-        </Card>
-        <Card className="w-80">
-          <CardHeader>
-            <CardTitle>Meet New Friends</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="mb-2">Encounter helpful allies and mysterious characters who will join you on your adventure.</p>
-            <p className="text-muted-foreground">Teamwork and friendship are key to overcoming challenges!</p>
-          </CardContent>
-        </Card>
+    <main className="container mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4">Choose Your Adventure! 🌟</h2>
+          <p className="text-xl text-muted-foreground">
+            Pick a story and start your exciting journey!
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {themes.map((theme) => (
+            <ThemeCard
+              key={theme.id}
+              theme={theme}
+              onClick={handleThemeSelect}
+            />
+          ))}
+        </div>
+
+        <div className="text-center text-sm text-muted-foreground">
+          <p>🔒 More adventures coming soon!</p>
+        </div>
       </div>
     </main>
   );
